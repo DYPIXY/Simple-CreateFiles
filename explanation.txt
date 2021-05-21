@@ -1,1 +1,1 @@
-a file creator for no reason and a sorter
+A simple file creator and a sorter(comming soon)

@@ -1,8 +1,8 @@
 import os
 
-message = input("which message do you want to write?: ")
 howMuch = int(input("how much files to write?: "))
 nameOf = input("choose a name for the files: ")
+message = input("which message do you want to write?: ")
 
 try:
     os.mkdir("FilesCreated")
@@ -18,7 +18,7 @@ try:
 except ValueError:
     print("")
 
-for vari in range(howMuch) :
+for vari in range(1,howMuch) :
     open(nameOf+str(vari)+".txt","w+").write(message)
     vari+=1
 
