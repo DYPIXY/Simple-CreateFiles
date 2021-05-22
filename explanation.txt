@@ -1,1 +1,1 @@
-A simple file creator and a sorter(comming soon)
+A simple file creator and sorting algorithms to, well, sort
