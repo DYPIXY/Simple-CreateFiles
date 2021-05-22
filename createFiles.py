@@ -1,6 +1,6 @@
 import os
 
-howMuch = int(input("how much files to write?: "))
+howMuch = 1 + int(input("how much files to write?: "))
 nameOf = input("choose a name for the files: ")
 message = input("which message do you want to write?: ")
 
