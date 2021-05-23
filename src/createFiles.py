@@ -10,8 +10,7 @@ class fil:
         typeOfFile = ""
         message = ""
         nameOf = ""
-        
-        howMuch = 1 + int(input("how much files to write?: "))
+        howMuch = int(input("how much files to write?: "))
 
 
         #if empty, create empty files, else, what mensage do you want? If empty no file extension, if message, is a txt        
@@ -47,26 +46,28 @@ class fil:
         except ValueError:
             print("")
 
-        #create the files
-        def name():
-            a = input("type 'r' for random files or write any name you want")            
-            if a.lower() == "y":
-                randname = True
+        #"random" names if True, else the input is the name
+        name = input("type 'r' for random files or write any name you want: ")            
+        if name.lower() == "y":
+            randname = True
+        else:
+            nameOf = name
 
-
+        #"random" numbers in a "random" order, if name is 
         list = []
-        for vari in range(1, howMuch, 1):
+        while len(list) <= howMuch:
             ran = random.randint(1, howMuch)
-            for i in list:    
-                if i == ran:
-                    vari -= 1
-                    continue                    
-        
-            list.append(ran)
-            open(nameOf+str(ran)+typeOfFile,"w+").write(str(message))        
+            if ran in list:    
+                continue                
+            else:         
+                #create the files
+                list.append(ran)
+                with open(nameOf+str(ran)+typeOfFile,"w+") as file:
+                    file.write(str(message))        
 
-        for pri in list:
+        #for pri in list:
 
 
-        print("end")
+        print("\nend")
+    
     start()
