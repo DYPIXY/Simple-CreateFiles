@@ -1,3 +1,3 @@
 # Sorting-Files
 
-<p> Just testing some sorting algorithms
+### <p>Sorting algorithms and a simple file creator</p>

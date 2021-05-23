@@ -1,1 +1,2 @@
 A simple file creator and sorting algorithms to, well, sort
+TODO (explain every algorithm, and why the languages)
