@@ -48,13 +48,13 @@ class fil:
         #create the files
         import random
         list = []
-        for vari in range(1, howMuch) :
+        for vari in range(1, howMuch, 0) :
             ran = random.randint(1, howMuch)
-            print(ran)
             if ran not in list:
                 list.append(ran)
                 open(nameOf+str(ran)+typeOfFile,"w+").write(str(message))
                 vari -= 1      
-
+            else:
+                vari +=1
         print("end")
     start()
