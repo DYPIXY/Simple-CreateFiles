@@ -3,19 +3,25 @@ import os
 def start():
 
     typeOfFile = ""
+    message = ""
     howMuch = 1 + int(input("how much files to write?: "))
     nameOf = input("choose a name for the files: ")
 
     #if empty, create empty files, else, what mensage do you want? If empty no file extension, if message, is a txt
-    empty = input("do you want empty files? [y/n]")
+    
+    def FilePro():
+        empty = input("do you want empty files? [y/n]: ")
 
-    if empty.lower() == "y" or "yes":
-        message = str("")
-    elif empty.lower == "n" or "no":
-        message = input("which message do you want to write?: ")
-        typeOfFile = ".txt"
-    else:
-        unvalid = true
+        if empty.lower() in ["y", "yes"]:
+            message = ""
+            typeOfFile = ""
+        elif empty.lower() in ["n", "no"]:
+            message = input("which message do you want to write?: ")
+            typeOfFile = ".txt"
+        else:
+            print("\n you put a wrong input, please write y or yes, n or no \n")
+            FilePro()
+    FilePro()
 
     #create a directory if it does not exists, remove everything inside if it already exists
     try:
@@ -36,11 +42,7 @@ def start():
 
     #create the files
     for vari in range(1,howMuch) :
-        open(nameOf+str(vari)+typeOfFile,"w+").write(message)
+        open(nameOf+str(vari)+typeOfFile,"w+").write(str(message))
 
-
-
-
-#this is just a debug
 start()
 print("end")
