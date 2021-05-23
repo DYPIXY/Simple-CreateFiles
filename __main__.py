@@ -1,11 +1,12 @@
 import os
-import createFiles as cr
+from src import createFiles
+import src
 
 class crtFile:
-    def crt():
-        create = input("you want to create files to sort? [y/n]:")
-        if create.lower() == ["yes", "y"]:            
-            cr.start()
 
-print(os.system("ls FilesCreated"))
+    create = str(input("you want to create files to sort? [y/n]:"))
+    if create.lower() == ["yes", "y"]:            
+        createFiles.start()
+    
+#print(os.system("ls FilesCreated"))
 
