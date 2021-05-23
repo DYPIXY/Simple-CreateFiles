@@ -1,6 +1,7 @@
 # This is for sorting the files you want, with the names you want
 #
 import os
+import random
 
 class fil:
 
@@ -45,7 +46,15 @@ class fil:
             print("")
 
         #create the files
-        for vari in range(1,howMuch) :
-            open(nameOf+str(vari)+typeOfFile,"w+").write(str(message))
-        
+        import random
+        list = []
+        for vari in range(1, howMuch) :
+            ran = random.randint(1, howMuch)
+            print(ran)
+            if ran not in list:
+                list.append(ran)
+                open(nameOf+str(ran)+typeOfFile,"w+").write(str(message))
+                vari -= 1      
+
         print("end")
+    start()
