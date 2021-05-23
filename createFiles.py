@@ -43,6 +43,5 @@ def start():
     #create the files
     for vari in range(1,howMuch) :
         open(nameOf+str(vari)+typeOfFile,"w+").write(str(message))
-
-start()
-print("end")
+    
+    print("end")
