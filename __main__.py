@@ -1,5 +1,5 @@
 import os
-from src import createFiles as cr
+from src import createFiles as cr, randomFiles
 
 class filesToSort:
     def __init__(self):    
@@ -7,9 +7,10 @@ class filesToSort:
         if create.lower() in ["create", "c"]:            
             cr.fil.start()
         elif create.lower() in ["random", "r"]:
-            print()
+            randomFiles()
         elif create.lower() in ["default", "d"]:
             print()
+
 
 
 
