@@ -62,7 +62,8 @@ class fil:
             else:         
                 #create the files
                 list.append(ran)
-                open(nameOf+str(ran)+typeOfFile,"w+").write(str(message))        
+                with open(nameOf+str(ran)+typeOfFile,"w+") as file:
+                    file.write(str(message))
 
         #for pri in list:
 
