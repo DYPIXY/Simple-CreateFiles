@@ -1,47 +1,51 @@
+# This is for sorting the files you want, with the names you want
+#
 import os
 
-def start():
+class fil:
 
-    typeOfFile = ""
-    message = ""
-    howMuch = 1 + int(input("how much files to write?: "))
-    nameOf = input("choose a name for the files: ")
+    def start():
 
-    #if empty, create empty files, else, what mensage do you want? If empty no file extension, if message, is a txt
-    
-    def FilePro():
-        empty = input("do you want empty files? [y/n]: ")
+        typeOfFile = ""
+        message = ""
+        howMuch = 1 + int(input("how much files to write?: "))
+        nameOf = input("choose a name for the files: ")
 
-        if empty.lower() in ["y", "yes"]:
-            message = ""
-            typeOfFile = ""
-        elif empty.lower() in ["n", "no"]:
-            message = input("which message do you want to write?: ")
-            typeOfFile = ".txt"
-        else:
-            print("\n you put a wrong input, please write y or yes, n or no \n")
-            FilePro()
-    FilePro()
+        #if empty, create empty files, else, what mensage do you want? If empty no file extension, if message, is a txt
+        
+        def FilePro():
+            empty = input("do you want empty files? [y/n]: ")
 
-    #create a directory if it does not exists, remove everything inside if it already exists
-    try:
-        os.mkdir("FilesCreated")
-    except OSError:
-        print()
+            if empty.lower() in ["y", "yes"]:
+                message = ""
+                typeOfFile = ""
+            elif empty.lower() in ["n", "no"]:
+                message = input("which message do you want to write?: ")
+                typeOfFile = ".txt"
+            else:
+                print("\n you put a wrong input, please write y or yes, n or no \n")
+                FilePro()
+        FilePro()
 
-    #chose the path to the files directory to create
-    PATH = str(os.getcwd()+"/FilesCreated")
-    os.chdir(PATH)
+        #create a directory if it does not exists, remove everything inside if it already exists
+        try:
+            os.mkdir("FilesCreated")
+        except OSError:
+            print()
 
-    #remove the files inside the folder if you created files in it before
-    try:
-        for files in os.listdir():
-            os.remove(files)
-    except ValueError:
-        print("")
+        #chose the path to the files directory to create
+        PATH = str(os.getcwd()+"/FilesCreated")
+        os.chdir(PATH)
 
-    #create the files
-    for vari in range(1,howMuch) :
-        open(nameOf+str(vari)+typeOfFile,"w+").write(str(message))
-    
-    print("end")
+        #remove the files inside the folder if you created files in it before
+        try:
+            for files in os.listdir():
+                os.remove(files)
+        except ValueError:
+            print("")
+
+        #create the files
+        for vari in range(1,howMuch) :
+            open(nameOf+str(vari)+typeOfFile,"w+").write(str(message))
+        
+        print("end")
