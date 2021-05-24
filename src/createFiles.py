@@ -65,7 +65,6 @@ class fil:
                 with open(nameOf+str(ran)+typeOfFile,"w+") as file:
                     file.write(str(message))
 
-        #for pri in list:
 
 
         print("\n end")
