@@ -55,6 +55,8 @@ class fil:
 
         #"random" numbers in a "random" order, if name is 
         list = []
+        
+        #consertar isso depois, loop infinito pq o while não muda
         while len(list) <= howMuch:
             ran = random.randint(1, howMuch)
             if ran in list:    
