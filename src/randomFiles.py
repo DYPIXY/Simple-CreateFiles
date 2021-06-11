@@ -1,11 +1,12 @@
-import random
-import os
+import random, string, os
 
 os.chdir =str(os.getcwd())+"/FilesCreated"
-howMuch=random.randint(1, 100000)
+howMuch = int(random.randint(1, 100000))
+
 list = []
-for num in howMuch:
-    print("")
+for num in range(howMuch):
+    print()
+print(num)
 
 
 '''
