@@ -1,8 +1,7 @@
 # This is for sorting the files you want, with the names you want
 #
 import os
-import random
-
+import random, string
 class fil:
 
     def start():
@@ -13,20 +12,16 @@ class fil:
         howMuch = int(input("how much files to write?: "))
 
 
-        #if empty, create empty files, else, what mensage do you want? If empty no file extension, if message, is a txt        
-        def FilePro():
-            empty = input("do you want empty files? [y/n]: ")
-
-            if empty.lower() in ["y", "yes"]:
-                message = ""
-                typeOfFile = ""
-            elif empty.lower() in ["n", "no"]:
-                message = input("which message do you want to write?: ")
-                typeOfFile = ".txt"
-            else:
-                print("\n you put a wrong input, please write y or yes, n or no \n")
-                FilePro()
-        FilePro()
+        #if empty, create empty files, else, what message do you want? If empty no file extension, if message, is a txt        
+        empty = input("do you want empty files? [y/n]: ")
+        if empty.lower() in ["y", "yes"]:
+            message = ""
+            typeOfFile = ""
+        elif empty.lower() in ["n", "no"]:
+            message = input("which message do you want to write?: ")
+            typeOfFile = ".txt"
+        else:
+            print("\n you put a wrong input, please write [y or yes], [n or no] \n")
 
 
         #create a directory if it does not exists, remove everything inside if it already exists
@@ -47,17 +42,20 @@ class fil:
             print("")
 
         #"random" names if True, else the input is the name
-        name = input("type 'r' for random files or write any name you want: ")            
-        if name.lower() == "y":
-            randname = True
+        def randomword(length):
+            letters = string.ascii_letters
+            return ''.join(random.choice(letters) for i in range(length))
+
+        
+        name = input("type 'r' for random name files or write a name that you want: ")            
+        if name.lower() == "r":
+            nameOf = randomword(5)+"_"
         else:
             nameOf = name
 
         #"random" numbers in a "random" order, if name is 
         list = []
-        
-        #consertar isso depois, loop infinito pq o while não muda
-        while len(list) <= howMuch:
+        while len(list) < howMuch:
             ran = random.randint(1, howMuch)
             if ran in list:    
                 continue                
